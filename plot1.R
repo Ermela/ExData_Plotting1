@@ -12,5 +12,6 @@ Settime <-strptime(paste(household_power_consumptionfinal$Date, household_power_
 household_power_consumptionfinal <- cbind(Settime, household_power_consumptionfinal)
 
 ##Plot 1
-
-hist(household_power_consumptionfinal$Global_active_power, col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
+png(filename = "plot1.png")
+plot1.png <-hist(household_power_consumptionfinal$Global_active_power, col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
+dev.off()
