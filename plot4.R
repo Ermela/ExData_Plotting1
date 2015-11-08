@@ -12,7 +12,8 @@ Settime <-strptime(paste(household_power_consumptionfinal$Date, household_power_
 household_power_consumptionfinal <- cbind(Settime, household_power_consumptionfinal)
 
 ##Plot 4
-labels <- c("Sub_metering_1","Sub_metering_2","Sub_metering_3")
+png(filename = "plot4.png")
+plot4.png<- {labels <- c("Sub_metering_1","Sub_metering_2","Sub_metering_3")
 colours <- c("black","red","blue")
 par(mar=c(4,4,2,2))
 par(mfrow=c(2,2))
@@ -24,4 +25,6 @@ par(pin=(1,1))
   lines(household_power_consumptionfinal$Settime, household_power_consumptionfinal$Sub_metering_3, type="l", col="blue")
   legend("topright", bty="n", legend=labels, lty=1,cex=0.5, col=colours)
   plot(household_power_consumptionfinal$Settime, household_power_consumptionfinal$Global_reactive_power, type="l", col="black", xlab="datetime", ylab="Global_reactive_power")
+  }
+  dev.off()
     
