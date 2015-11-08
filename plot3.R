@@ -12,9 +12,12 @@ Settime <-strptime(paste(household_power_consumptionfinal$Date, household_power_
 household_power_consumptionfinal <- cbind(Settime, household_power_consumptionfinal)
 
 ##Plot 3
-colours <- c("black", "red", "blue")
+png(filename = "plot3.png")
+plot3.png<-{colours <- c("black", "red", "blue")
 labels <- c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3")
 plot(household_power_consumptionfinal$Settime, household_power_consumptionfinal$Sub_metering_1, type="l", col=colours[1], xlab="", ylab="Energy sub metering")
 lines(household_power_consumptionfinal$Settime, household_power_consumptionfinal$Sub_metering_2, col=colours[2])
 lines(household_power_consumptionfinal$Settime, household_power_consumptionfinal$Sub_metering_3, col=colours[3])
 legend("topright", legend=labels, col=colours, cex=0.5,lty="solid")
+}
+dev.off()
