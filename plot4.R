@@ -4,7 +4,7 @@ dataurl <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_powe
 zipfolder <- "exdata%2Fdata%2Fhousehold_power_consumption.zip"
 textfile <- "exdata-data-household_power_consumption"
 if (!file.exists(zipfolder)) { download.file(dataurl,zipfolder) }
-if (!file.exists(textfile)) { unzip(textfile) }
+if (!file.exists(textfile)) { unzip(zipfolder) }
 
 household_power_consumption <- read.csv("C:/Users/User/Exploratory Data Analysis/household_power_consumption.txt", header=T, sep=";",na.strings="?")
 household_power_consumptionfinal<- household_power_consumption[household_power_consumption$Date %in% c("1/2/2007","2/2/2007"),]
